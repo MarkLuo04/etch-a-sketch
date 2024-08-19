@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 let gridSize = 16;
 const sizeButton = document.getElementById("popup");
 const eraseButton = document.getElementById("erase");
+const resetButton = document.getElementById("reset");
 
 let isMouseDown = false; // Track whether the mouse button is pressed
 let lastColoredSquare = null; // Track the last square that was colored
@@ -86,6 +87,14 @@ function getRandomColor() {
 eraseButton.addEventListener("click", () => {
     eraseMode = !eraseMode;
     eraseButton.textContent = eraseMode ? "Erase" : "Drawing";
+});
+
+// Reset the grid to the initial state
+resetButton.addEventListener("click", () => {
+    const gridSquares = document.querySelectorAll(".grid");
+    gridSquares.forEach(square => {
+        square.style.backgroundColor = ''; // Clear all colors
+    });
 });
 
 // Initial grid creation
