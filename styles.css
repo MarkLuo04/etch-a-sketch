@@ -1,6 +1,7 @@
 body {
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -15,8 +16,12 @@ body {
 }
 
 .grid {
-    flex: 0 0 calc(100% / 16); 
-    height: calc(100% / 16); 
     box-sizing: border-box;
     border: 1px solid black;
+}
+
+#popup {
+    height: 30px;
+    width: 100px;
+    margin-bottom: 20px;
 }
